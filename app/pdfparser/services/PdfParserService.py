@@ -3,6 +3,7 @@ import tempfile
 import textract
 from app.AIModel.AIModel import aiModel
 from app.AIModel.domain.classmap import classes
+from app.pdfparser.services.typings.classifycv_output import ClassifyCvOutput
 import logging
 
 logger= logging.getLogger(__name__)
@@ -22,13 +23,18 @@ class PdfParserService:
             logger.error(f'Erro ao processar o PDF: {e}')
             return -1
     
-    def classifyCv(self, file: UploadFile) -> str:
+    def classifyCv(self, file: UploadFile) -> ClassifyCvOutput:
         text= self.echoContent(file)
+        
         if type(text) is int:
             return None
         
         classification= aiModel.parseCvv(text)
-        return classes[classification]
+        result = ClassifyCvOutput(**{
+            "cv_class": classes[classification.cv_class],
+            "cv_prob": classification.cv_prob
+        })
+        return result
 
 pdfParserService= PdfParserService()
 
