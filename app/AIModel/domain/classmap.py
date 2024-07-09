@@ -24,3 +24,9 @@ classes=[
     'SALES',
     'TEACHER'
 ]
+
+levels = [
+    'JUNIOR',
+    'MID-LEVEL',
+    'SENIOR'
+]
