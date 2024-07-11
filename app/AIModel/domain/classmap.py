@@ -22,7 +22,9 @@ classes=[
     'INFORMATION-TECHNOLOGY',
     'PUBLIC-RELATIONS',
     'SALES',
-    'TEACHER'
+    'TEACHER',
+    'ARCHITECT',
+    'MANAGEMENT'
 ]
 
 levels = [
