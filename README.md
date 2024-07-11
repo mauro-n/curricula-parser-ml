@@ -87,4 +87,22 @@ The data was vectorized using the `CountVectorizer` from sklearn. The trained mo
 #### Confusion Matrix for Seniority
 ![Confusion Matrix for Seniority](metadata/img/confusion_matrix_senior.png)
 
+## Conclusion
+
+This project demonstrates a robust proof of concept for a REST API capable of classifying curricula into specific fields of occupation and levels of seniority using machine learning algorithms. The model, trained on a custom dataset with over 3,000 resumes spanning 26 areas of occupation, achieves accurate classifications while providing valuable insights into the efficacy of various PDF extraction libraries and machine learning models.
+
+### Key Takeaways
+
+1. **Effective PDF Processing**: After evaluating multiple libraries for PDF extraction, `pdftotext` was selected for its superior performance in terms of processing time.
+   
+2. **Comprehensive Preprocessing**: Utilizing `Spacy` for text processing (stopwords removal, lemmatization, and tokenization) and `Re` for hyperlink removal ensured clean and relevant data for model training.
+
+3. **Model Evaluation and Selection**: Among the evaluated models, XGBoost emerged as the best performer, providing high accuracy in both seniority and area of expertise classifications.
+
+4. **Data Vectorization and Persistence**: The use of `CountVectorizer` for data vectorization and `joblib` for model persistence streamlined the deployment and inference process, making the system efficient and scalable.
+
+5. **Accuracy and Performance**: The achieved accuracies and confusion matrices for both seniority and area of expertise classifications highlight the model's effectiveness and reliability.
+
+This project not only showcases the potential for automated resume classification but also serves as an excellent learning experience in handling real-world data, evaluating multiple libraries and models, and implementing a complete machine learning pipeline from data preprocessing to deployment.
+
 **Free Software, Hell Yeah!**
